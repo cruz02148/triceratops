@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
 app.use(session({
   secret: 'triceratops-pillows',
-  cookie: { maxAge: 60 *1000},
+  cookie: {maxAge: 60 *1000},
   resave: true,
   saveUninitialized: true
 }));
