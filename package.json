@@ -61,13 +61,15 @@
     "react-redux": "^4.4.5",
     "react-router": "^2.4.1",
     "react-router-redux": "4.0.4",
+    "react-social": "^1.4.1",
     "react-tap-event-plugin": "^1.0.0",
     "redux": "^3.5.2",
     "redux-form": "^5.2.5",
     "redux-logger": "^2.6.1",
     "redux-thunk": "2.1.0",
     "style-loader": "^0.13.1",
-    "url-loader": "^0.5.7"
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.1"
   },
   "devDependencies": {
     "babel-plugin-transform-object-rest-spread": "6.8.0",

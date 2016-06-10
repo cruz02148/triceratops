@@ -1,14 +1,13 @@
 import React from 'react';
 import { Component } from 'react';
 import Paper from 'material-ui/Paper';
-import DatePicker from 'material-ui/DatePicker';
-import RaisedButton from 'material-ui/RaisedButton';
 import {connect} from 'react-redux';
 import RentDateComponenet from '../containers/RentDateContainer';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import MapComponenet from './Map.js';
 import CommentList from './CommentList';
+import {FacebookButton, TwitterButton, PinterestButton} from 'react-social';
 
 class ItemDetailComponent extends Component {
   constructor(props){
@@ -38,10 +37,31 @@ class ItemDetailComponent extends Component {
             <h3>{item.title}</h3>
             <p><b>Details: </b>{item.description}</p>
             <h3>${item.price}.00</h3>
+            <FacebookButton
+              url= {window.location.href}
+              className="fb-button"
+              message= {item.description}
+            >
+              {"Share on Facebook"}
+            </FacebookButton>
+            <TwitterButton
+              url={window.location.href}
+              message="Check out this item for rent on Share Anything"
+              className="tw-button"
+            >
+              {"Share on Twitter"}
+            </TwitterButton>
+            <PinterestButton
+              message={item.description}
+              media={item.imgURL}
+              className="pi-button"
+            >
+            {"Share on Pintrest"}
+            </PinterestButton>
             {item.author && item.author.username !== user.username &&
               <RentDateComponenet />
             }
-
+            
             <Dialog
               actions={
                 <FlatButton
