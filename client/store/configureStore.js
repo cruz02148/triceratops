@@ -15,5 +15,5 @@ export default function configureStore() {
       applyMiddleware(thunk, router/*, loggerMiddleware*/),
       window.devToolsExtension ? window.devToolsExtension() : f => f
     )
-  )
-};
+  );
+}

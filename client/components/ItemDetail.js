@@ -9,6 +9,7 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import MapComponenet from './Map.js';
 import CommentList from './CommentList';
+import {FacebookButton} from 'react-social';
 
 class ItemDetailComponent extends Component {
   constructor(props){
@@ -38,6 +39,9 @@ class ItemDetailComponent extends Component {
             <h3>{item.title}</h3>
             <p><b>Details: </b>{item.description}</p>
             <h3>${item.price}.00</h3>
+            <FacebookButton
+              url= {window.location.href}
+            />
             {item.author && item.author.username !== user.username &&
               <RentDateComponenet />
             }
