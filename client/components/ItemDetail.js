@@ -41,7 +41,11 @@ class ItemDetailComponent extends Component {
             <h3>${item.price}.00</h3>
             <FacebookButton
               url= {window.location.href}
-            />
+              className="fb-button"
+              message= {item.description}
+            >
+            {"Share on Facebook"}
+            </FacebookButton>
             {item.author && item.author.username !== user.username &&
               <RentDateComponenet />
             }
