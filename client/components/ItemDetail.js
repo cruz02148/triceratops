@@ -7,7 +7,7 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import MapComponenet from './Map.js';
 import CommentList from './CommentList';
-import {FacebookButton} from 'react-social';
+import {FacebookButton, TwitterButton, PinterestButton} from 'react-social';
 
 class ItemDetailComponent extends Component {
   constructor(props){
@@ -42,12 +42,26 @@ class ItemDetailComponent extends Component {
               className="fb-button"
               message= {item.description}
             >
-            {"Share on Facebook"}
+              {"Share on Facebook"}
             </FacebookButton>
+            <TwitterButton
+              url={window.location.href}
+              message="Check out this item for rent on Share Anything"
+              className="tw-button"
+            >
+              {"Share on Twitter"}
+            </TwitterButton>
+            <PinterestButton
+              message={item.description}
+              media={item.imgURL}
+              className="pi-button"
+            >
+            {"Share on Pintrest"}
+            </PinterestButton>
             {item.author && item.author.username !== user.username &&
               <RentDateComponenet />
             }
-
+            
             <Dialog
               actions={
                 <FlatButton
