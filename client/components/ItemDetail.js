@@ -1,8 +1,6 @@
 import React from 'react';
 import { Component } from 'react';
 import Paper from 'material-ui/Paper';
-import DatePicker from 'material-ui/DatePicker';
-import RaisedButton from 'material-ui/RaisedButton';
 import {connect} from 'react-redux';
 import RentDateComponenet from '../containers/RentDateContainer';
 import Dialog from 'material-ui/Dialog';
