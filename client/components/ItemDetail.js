@@ -40,7 +40,7 @@ class ItemDetailComponent extends Component {
             <FacebookButton
               url= {window.location.href}
               className="fb-button"
-              message= {`CHeck out this ${item.description} for rent on Share Anything`}
+              message= {`Check out this ${item.description} for rent on Share Anything`}
             >
               {"Share on Facebook"}
             </FacebookButton>
