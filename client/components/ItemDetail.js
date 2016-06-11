@@ -7,6 +7,7 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import MapComponenet from './Map.js';
 import CommentList from './CommentList';
+import PaymentForm from './PaymentForm';
 import {FacebookButton, TwitterButton, PinterestButton} from 'react-social';
 
 class ItemDetailComponent extends Component {
@@ -41,7 +42,6 @@ class ItemDetailComponent extends Component {
               url= {window.location.href}
               className="fb-button"
               message= {`Check out this ${item.description} for rent on Share Anything`}
-            >
               {"Share on Facebook"}
             </FacebookButton>
             <TwitterButton
@@ -74,8 +74,8 @@ class ItemDetailComponent extends Component {
               open={ui.popup.open}
               onRequestClose={popupClose}
             >
-              {ui.popup.content}
             </Dialog>
+            <PaymentForm product={item} user={user}/>
           </div>
           <div className='productBody col-md-5 map-wrapper'>
             <div id="map-container">
