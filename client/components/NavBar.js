@@ -7,7 +7,7 @@ import TextField from 'material-ui/TextField';
 import FlatButton from 'material-ui/FlatButton';
 import IconButton from 'material-ui/IconButton';
 import ActionHome from 'material-ui/svg-icons/action/home';
-import Face from 'material-ui/svg-icons/action/face';
+import Face from 'material-ui/svg-icons/action/account-circle';
 import SearchContainer from '../containers/SearchContainer.js';
 
 const styles = {
@@ -20,6 +20,10 @@ const styles = {
     height: 42,
     padding: 5
   }
+};
+
+const iconStyles = {
+  marginRight: 24,
 };
 
 export default class NavBar extends Component {
@@ -38,27 +42,21 @@ export default class NavBar extends Component {
     const { isAuthenticated } = this.props.auth;
     return (
       <div>
-        <nav className="navbar navbar-light ">
-          <Link to="/listings">
-          <IconButton
-            iconStyle={styles.mediumIcon}
-            style={styles.medium}
-            className="navbar-brand"
-            href="/listings"
-          ><ActionHome />
-          </IconButton>
-          </Link>
+        <nav className="navbar">
           <ul className="nav navbar-nav">
             <li className="nav-item">
-              <Link to="/listings"><FlatButton label="Sharing"/></Link>
+              <Link to="/listings">
+                <img src="http://bacchetta.co/wp-content/uploads/2016/06/barterbox.png" />
+                <span className="logo">BarterBox</span>
+              </Link>
             </li>
-            <li className="nav-item">
-              <Link to="/manage"><FlatButton label="Dashboard"/></Link>
+            <li>
+              <SearchContainer />
             </li>
           </ul>
           <ul className="nav navbar-nav navbar-right" >
-            <li>
-              <SearchContainer />
+            <li className="nav-item">
+              <Link to="/manage"><FlatButton label="Dashboard"/></Link>
             </li>
             <li className="nav-item navLogin">
               {!isAuthenticated &&
@@ -74,7 +72,7 @@ export default class NavBar extends Component {
                 iconStyle={styles.mediumIcon}
                 style={styles.medium}
               >
-              <Face />
+                <Face />
               </IconButton>
             </Link>
 

@@ -13,7 +13,7 @@ body {
 
 #root {
   max-width: 80%;
-  padding: 10px 20px;
+  padding: 0 20px;
   margin: auto;
 }
 
@@ -124,14 +124,21 @@ body {
 Navigation
 ******************/
 
+.logo {
+  font-weight: 700;
+  font-size: 24px;
+  margin: 0 40px 0 20px;
+}
+
 .navSearch {
   margin-top: 7px;
   padding-left: 7px;
 }
 
 .navbar {
-  margin-bottom: 0px;
-  padding: 0 40px;
+  margin-bottom: 20px;
+  height: 40px;
+  padding: 5px 0;
 }
 
 #root > div > div > nav > ul > li > a:hover,
