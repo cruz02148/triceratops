@@ -14,6 +14,8 @@ const errorStyle = {
     color: blueGrey500
   };
 
+const DateTimeFormat = global.Intl.DateTimeFormat;
+
 const NewListingComponenet = (props) => {
   const { fields, handleSubmit, resetForm, isAttemptingToAdd, mapUpdate, ui, setMapCenter, setMarkerCenter } = props;
   
@@ -46,11 +48,21 @@ const NewListingComponenet = (props) => {
             autoOk={true}
             hintStyle={errorStyle}
             hintText="Available From"
+            formatDate={new DateTimeFormat('en-US', {
+              day: 'numeric',
+              month: 'long',
+              year: 'numeric',
+            }).format}
             onChange={(x, event) => fields.availableFrom.onChange(event)}
           /><DatePicker
             autoOk={true}
             hintStyle={errorStyle}
             hintText="Available To"
+            formatDate={new DateTimeFormat('en-US', {
+              day: 'numeric',
+              month: 'long',
+              year: 'numeric',
+            }).format}
             onChange={(x, event) => fields.availableTo.onChange(event)}
           /></li>
           <li><TextField hintStyle={errorStyle} fullWidth={true} hintText={'Image Url'} {...fields.imgURL}/></li>
