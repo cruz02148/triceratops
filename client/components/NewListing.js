@@ -8,11 +8,14 @@ import RaisedButton from 'material-ui/RaisedButton';
 import {blueGrey500} from 'material-ui/styles/colors';
 import MapComponenet from './Map.js';
 import Formsy from 'formsy-react';
-import {FormsyText} from 'formsy-material-ui/lib';
+import {FormsyText, FormsySelect} from 'formsy-material-ui/lib';
+// import DropDownMenuList from './DropDownMenu';
+import DropDownMenu from './DropDownMenu';
+import MenuItem from 'material-ui/MenuItem';
 
 const errorStyle = {
-    color: blueGrey500
-  };
+  color: blueGrey500
+};
 
 const NewListingComponenet = (props) => {
   const { fields, handleSubmit, resetForm, isAttemptingToAdd, mapUpdate, ui, setMapCenter, setMarkerCenter } = props;
@@ -26,8 +29,17 @@ const NewListingComponenet = (props) => {
       <form className='addForm'>
       {isAttemptingToAdd ? <p>Adding new listing, please wait...</p> : null}
         <ul style={{listStyle:'none', background:'rgba(255,255,255,0.8)'}}>
-          <li><TextField hintStyle={errorStyle} hintText={'Type'} {...fields.type}/>
-          <TextField hintStyle={errorStyle} hintText={'Title'} {...fields.title}/></li>
+          <li>
+            <Formsy.Form>
+              <FormsySelect
+                name="Type"
+                hintText="Select a Category"
+              >
+                <MenuItem value={"Electronics"} primaryText="Electronics" />
+              </FormsySelect>
+            </Formsy.Form>
+          </li>
+          <li><TextField hintStyle={errorStyle} hintText={'Title'} {...fields.title}/></li>
           <li><TextField hintStyle={errorStyle} fullWidth={true} hintText={'Summary'} {...fields.summary}/></li>
           <li><TextField hintStyle={errorStyle} fullWidth={true} multiLine={true} rows={2} hintText={'Description'} {...fields.description}/></li>
           <li>
