@@ -7,6 +7,8 @@ import DatePicker from 'material-ui/DatePicker';
 import RaisedButton from 'material-ui/RaisedButton';
 import {blueGrey500} from 'material-ui/styles/colors';
 import MapComponenet from './Map.js';
+import Formsy from 'formsy-react';
+import {FormsyText} from 'formsy-material-ui/lib';
 
 const errorStyle = {
     color: blueGrey500
@@ -14,6 +16,11 @@ const errorStyle = {
 
 const NewListingComponenet = (props) => {
   const { fields, handleSubmit, resetForm, isAttemptingToAdd, mapUpdate, ui, setMapCenter, setMarkerCenter } = props;
+  
+  const formStyle = {
+    color: blueGrey500
+  };
+  
   return (
     <div>
       <form className='addForm'>
@@ -23,7 +30,18 @@ const NewListingComponenet = (props) => {
           <TextField hintStyle={errorStyle} hintText={'Title'} {...fields.title}/></li>
           <li><TextField hintStyle={errorStyle} fullWidth={true} hintText={'Summary'} {...fields.summary}/></li>
           <li><TextField hintStyle={errorStyle} fullWidth={true} multiLine={true} rows={2} hintText={'Description'} {...fields.description}/></li>
-          <li><TextField hintStyle={errorStyle} hintText={'Price'} {...fields.price}/></li>
+          <li>
+            <Formsy.Form>
+              <FormsyText
+                name="Price"
+                hintText="Price"
+                validations='isNumeric'
+                validationError="Please enter numbers only"
+                style={formStyle}
+                {...fields.price}
+              />
+            </Formsy.Form>
+          </li>
           <li><DatePicker
             autoOk={true}
             hintStyle={errorStyle}

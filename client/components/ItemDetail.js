@@ -41,19 +41,19 @@ class ItemDetailComponent extends Component {
             <FacebookButton
               url= {window.location.href}
               className="fb-button"
-              message= {item.description}
+              message= {`Check out this ${item.description} for rent on Share Anything`}
             >
               {"Share on Facebook"}
             </FacebookButton>
             <TwitterButton
               url={window.location.href}
-              message="Check out this item for rent on Share Anything"
+              message={`Check out this ${item.description} for rent on Share Anything`}
               className="tw-button"
             >
               {"Share on Twitter"}
             </TwitterButton>
             <PinterestButton
-              message={item.description}
+              message={`Check out this ${item.description}`}
               media={item.imgURL}
               className="pi-button"
             >
