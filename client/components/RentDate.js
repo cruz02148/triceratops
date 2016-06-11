@@ -2,6 +2,8 @@ import React from 'react';
 import { Component } from 'react';
 import DatePicker from 'material-ui/DatePicker';
 import RaisedButton from 'material-ui/RaisedButton';
+import FlatButton from 'material-ui/FlatButton';
+import PaymentForm from './PaymentForm';
 
 class RentDateComponent extends Component {
   constructor(props){
@@ -30,6 +32,7 @@ class RentDateComponent extends Component {
         />
         <RaisedButton type="submit" label="Rent" style={{float:'right'}} />
       </form>
+
     );
   }
 }
