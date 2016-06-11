@@ -57,6 +57,7 @@
     "mongoose": "^4.4.19",
     "mongoose-type-url": "^1.0.2",
     "morgan": "^1.7.0",
+    "nuka-carousel": "^2.0.0",
     "react": "15.1.0",
     "react-dom": "15.1.0",
     "react-facebook-login": "^2.1.4",
