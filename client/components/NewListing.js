@@ -9,9 +9,6 @@ import {blueGrey500} from 'material-ui/styles/colors';
 import MapComponenet from './Map.js';
 import Formsy from 'formsy-react';
 import {FormsyText, FormsySelect} from 'formsy-material-ui/lib';
-// import DropDownMenuList from './DropDownMenu';
-import DropDownMenu from './DropDownMenu';
-import MenuItem from 'material-ui/MenuItem';
 
 const errorStyle = {
   color: blueGrey500
@@ -22,24 +19,22 @@ const DateTimeFormat = global.Intl.DateTimeFormat;
 const NewListingComponenet = (props) => {
   const { fields, handleSubmit, resetForm, isAttemptingToAdd, mapUpdate, ui, setMapCenter, setMarkerCenter } = props;
   
-  const formStyle = {
-    color: blueGrey500
-  };
-  
   return (
     <div>
       <form className='addForm'>
       {isAttemptingToAdd ? <p>Adding new listing, please wait...</p> : null}
         <ul style={{listStyle:'none', background:'rgba(255,255,255,0.8)'}}>
           <li>
-            <Formsy.Form>
-              <FormsySelect
-                name="Type"
-                hintText="Select a Category"
-              >
-                <MenuItem value={"Electronics"} primaryText="Electronics" />
-              </FormsySelect>
-            </Formsy.Form>
+            <select className="drop-down-menu" value="Category" {...fields.type} >
+              <option value="" disable-selected>Select a Category</option>
+              <option value="Electronic">Electronic</option>
+              <option value="Home">Home</option>
+              <option value="Furniture">Furniture</option>
+              <option value="Tickets">Tickets</option>
+              <option value="Automobiles">Automobiles</option>
+              <option value="Equipment & Sporting Goods">Equipment & Sporting Goods</option>
+              <option value="Other">Other</option>
+            </select>
           </li>
           <li><TextField hintStyle={errorStyle} hintText={'Title'} {...fields.title}/></li>
           <li><TextField hintStyle={errorStyle} fullWidth={true} hintText={'Summary'} {...fields.summary}/></li>
