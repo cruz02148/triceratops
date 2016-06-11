@@ -17,25 +17,95 @@ body {
   margin: auto;
 }
 
+.featured__image {
+  background-size: cover;
+  height: 500px;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.slider {
+  position: absolute;
+  height: 70%;
+  left: 0;
+  right: 0;
+}
+.featured__image--0 {
+  background-image: url('http://bacchetta.co/wp-content/uploads/2016/06/accessory.jpg');
+}
+
+.featured__image--1 {
+  background-image: url('http://bacchetta.co/wp-content/uploads/2016/06/electronics.jpg');
+}
+
+.featured__image--2 {
+  background-image: url('http://bacchetta.co/wp-content/uploads/2016/06/food.jpg');
+}
+
+.featured__image--3 {
+  background-image: url('http://bacchetta.co/wp-content/uploads/2016/06/pets.jpg');
+}
+
+.featured__image--4 {
+  background-image: url('http://bacchetta.co/wp-content/uploads/2016/06/book.jpg');
+}
+
+.featured__image--5 {
+  background-image: url('http://bacchetta.co/wp-content/uploads/2016/06/bike.jpg');
+}
+
+.featured__image--6 {
+  background-image: url('http://bacchetta.co/wp-content/uploads/2016/06/sport.jpg');
+}
+
+.featured__txt {
+  border: 2px solid #fff;
+  display: inline-block;
+  position: relative;
+  font-size: 24px;
+  text-transform: uppercase;
+  padding: 8px 24px;
+  color: #fff;
+  left: 0;
+  top: 50%;
+}
+
+.img__overlay {
+  color: #fff;
+  text-align: center;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0.3));
+  background: -webkit-linear-gradient(to top, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0.3));
+}
+
 .jumbotron {
   background-image: url('./hot-tub.jpg');
   background-size: cover;
-  position:absolute;
+  position: absolute;
   height: 70%;
-  left:0;
-  right:0;
+  left: 0;
+  right: 0;
   color: white;
   padding-left: 8%;
 }
 
-@media (max-width: 600px){
+@media (max-width: 400px) {
   .jumbotron h1 {
     font-size: 8vh;
+    font-family: 'Roboto';
   }
 }
 
-.subHeader{
-  font-family: 'Megrim', cursive;
+.header {
+  font-size: 8vh;
+  font-family: 'Roboto';
+}
+
+.subHeader {
+  font-style: italic;
 }
 
 .comments {
@@ -46,16 +116,9 @@ body {
   margin-left: 150px;
 }
 
-.jumbotron h1 {
-  font-size: 13vh;
-}
-
-
-
 .shares {
   padding-top: 67vh;
 }
-
 
 /******************
 Navigation
@@ -68,18 +131,19 @@ Navigation
 
 .navbar {
   margin-bottom: 0px;
+  padding: 0 40px;
 }
+
 #root > div > div > nav > ul > li > a:hover,
 #root > div > div > nav > ul > li > a:focus {
   background-color: transparent;
 }
 
-@media (max-width: 600px){
+@media (max-width: 600px) {
   .jumbotron h1 {
     font-size: 8vh;
   }
 }
-
 
 /******************
 Profile
@@ -96,7 +160,6 @@ Profile
 .profileLineItems {
   margin-top: -10px;
 }
-
 
 /******************
 Signup/Login
@@ -115,85 +178,84 @@ Signup/Login
   margin-bottom: 10px;
 }
 
-
 .fb-button {
-    padding-right: 45px;
-    height: 35px;
-    background: none;
-    border: none;
-    display: block;
-    background-size: 35px 35px;
-    background-position: right center;
-    background-repeat: no-repeat;
-    border-radius: 2px;
-    color: white;
-    font-family:"Merriweather Sans", sans-serif;
-    font-size: 14px;
-    margin-bottom: 15px;
-    width: 205px;
-    border-bottom: 2px solid transparent;
-    border-left: 1px solid transparent;
-    border-right: 1px solid transparent;
-    box-shadow: 0 4px 2px -2px gray;
-    text-shadow: rgba(0, 0, 0, .5) -1px -1px 0;
-    border-color: #2d5073;
-    background-color: #3b5998;
-    background-image: url(https://icons.iconarchive.com/icons/danleech/simple/512/facebook-icon.png);
+  padding-right: 45px;
+  height: 35px;
+  background: none;
+  border: none;
+  display: block;
+  background-size: 35px 35px;
+  background-position: right center;
+  background-repeat: no-repeat;
+  border-radius: 2px;
+  color: white;
+  font-family: "Merriweather Sans", sans-serif;
+  font-size: 14px;
+  margin-bottom: 15px;
+  width: 205px;
+  border-bottom: 2px solid transparent;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  box-shadow: 0 4px 2px -2px gray;
+  text-shadow: rgba(0, 0, 0, .5) -1px -1px 0;
+  border-color: #2d5073;
+  background-color: #3b5998;
+  background-image: url(https://icons.iconarchive.com/icons/danleech/simple/512/facebook-icon.png);
 }
+
 .tw-button {
-    padding-right: 45px;
-    height: 35px;
-    background: none;
-    border: none;
-    display: block;
-    background-size: 35px 35px;
-    background-position: right center;
-    background-repeat: no-repeat;
-    border-radius: 2px;
-    color: white;
-    font-family:"Merriweather Sans", sans-serif;
-    font-size: 14px;
-    margin-bottom: 15px;
-    width: 205px;
-    border-bottom: 2px solid transparent;
-    border-left: 1px solid transparent;
-    border-right: 1px solid transparent;
-    box-shadow: 0 4px 2px -2px gray;
-    text-shadow: rgba(0, 0, 0, .5) -1px -1px 0;
-    border-color: #2d5073;
-    background-color: #398ecf;
-    background-image: url(http://icons.iconarchive.com/icons/graphics-vibe/simple-rounded-social/256/twitter-icon.png);
+  padding-right: 45px;
+  height: 35px;
+  background: none;
+  border: none;
+  display: block;
+  background-size: 35px 35px;
+  background-position: right center;
+  background-repeat: no-repeat;
+  border-radius: 2px;
+  color: white;
+  font-family: "Merriweather Sans", sans-serif;
+  font-size: 14px;
+  margin-bottom: 15px;
+  width: 205px;
+  border-bottom: 2px solid transparent;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  box-shadow: 0 4px 2px -2px gray;
+  text-shadow: rgba(0, 0, 0, .5) -1px -1px 0;
+  border-color: #2d5073;
+  background-color: #398ecf;
+  background-image: url(http://icons.iconarchive.com/icons/graphics-vibe/simple-rounded-social/256/twitter-icon.png);
 }
 
 .pi-button {
-    padding-right: 45px;
-    height: 35px;
-    background: none;
-    border: none;
-    display: block;
-    background-size: 35px 35px;
-    background-position: right center;
-    background-repeat: no-repeat;
-    border-radius: 2px;
-    color: white;
-    font-family:"Merriweather Sans", sans-serif;
-    font-size: 14px;
-    margin-bottom: 15px;
-    width: 205px;
-    border-bottom: 2px solid transparent;
-    border-left: 1px solid transparent;
-    border-right: 1px solid transparent;
-    box-shadow: 0 4px 2px -2px gray;
-    text-shadow: rgba(0, 0, 0, .5) -1px -1px 0;
-    border-color: #2d5073;
-    background-color: #d73532;
-    background-image: url(http://icons.iconarchive.com/icons/danleech/simple/256/pinterest-icon.png);
+  padding-right: 45px;
+  height: 35px;
+  background: none;
+  border: none;
+  display: block;
+  background-size: 35px 35px;
+  background-position: right center;
+  background-repeat: no-repeat;
+  border-radius: 2px;
+  color: white;
+  font-family: "Merriweather Sans", sans-serif;
+  font-size: 14px;
+  margin-bottom: 15px;
+  width: 205px;
+  border-bottom: 2px solid transparent;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  box-shadow: 0 4px 2px -2px gray;
+  text-shadow: rgba(0, 0, 0, .5) -1px -1px 0;
+  border-color: #2d5073;
+  background-color: #d73532;
+  background-image: url(http://icons.iconarchive.com/icons/danleech/simple/256/pinterest-icon.png);
 }
 
 input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0px 1000px #F3F9FA inset;
+  -webkit-box-shadow: 0 0 0px 1000px #F3F9FA inset;
 }
-
 
 /******************
 Product Detail/Manage Listings
@@ -202,29 +264,35 @@ Product Detail/Manage Listings
 .productBanner, .manageBanner {
   background-image: url('./sky.jpg');
   background-size: cover;
-  position:absolute;
+  position: absolute;
   height: 69%;
-  left:0;
-  right:0;
+  left: 0;
+  right: 0;
   padding-left: 8%;
 }
 
-.manageBanner{
+.manageBanner {
   background-image: url('./share.jpg');
   z-index: -1;
 }
+
 .manage {
   color: white;
-  padding-top:25px;
+  padding-top: 25px;
 }
 
-.productBanner h2 {color: #555;}
+.productBanner h2 {
+  color: #555;
+}
+
 .productBody {
   padding-top: 5vh;
   padding-right: 10%;
 }
 
-.productBody p { font-size: 1.3em;}
+.productBody p {
+  font-size: 1.3em;
+}
 
 .productImage {
   height: 500px;
@@ -247,15 +315,17 @@ Product Detail/Manage Listings
   max-height: 500px;
 }
 
-
 .productCard {
   margin-bottom: 30px;
 }
 
-.addform {padding-bottom: 10px;}
-.addForm li{
+.addform {
+  padding-bottom: 10px;
+}
+
+.addForm li {
   padding-right: 10px;
-  max-width:96%;
+  max-width: 96%;
 }
 
 .filterBar {
