@@ -46,7 +46,6 @@ const NewListingComponenet = (props) => {
                 hintText="Price"
                 validations='isNumeric'
                 validationError="Please enter numbers only"
-                style={formStyle}
                 {...fields.price}
               />
             </Formsy.Form>
