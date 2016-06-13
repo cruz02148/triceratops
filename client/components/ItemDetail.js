@@ -62,7 +62,9 @@ class ItemDetailComponent extends Component {
             {item.author && item.author.username !== user.username &&
               <RentDateComponenet />
             }
-            
+            {item.author && item.author.username !== user.username &&
+              <PaymentForm product={item} user={user}/>
+            }
             <Dialog
               actions={
                 <FlatButton
@@ -76,7 +78,6 @@ class ItemDetailComponent extends Component {
               onRequestClose={popupClose}
             >
             </Dialog>
-            <PaymentForm product={item} user={user}/>
           </div>
           <div className='productBody col-md-5 map-wrapper'>
             <div id="map-container">
